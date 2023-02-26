@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 import './Form.css';
 
@@ -8,7 +8,23 @@ const Form = () => {
     const [subject, setSubject] = useState();
     
     const {telegram} = useTelegram();
+
+    const onSendData = useCallback(() => {
+        const data = {
+            country,
+            street,
+            subject
+        }
+        telegram.sendData(JSON.stringify(data));
+    }, []);
     
+    useEffect(() => {
+        telegram.onEvent( 'mainButtonClicked', onSendData);
+        return () => {
+            telegram.offEvent( 'mainButtonClicked', onSendData);
+        }
+    }, []);
+
     useEffect(() => {
         telegram.MainButton.setParams({
             text: 'Отправить данные'
@@ -55,8 +71,8 @@ const Form = () => {
             />
 
             <select className={'select'} value={subject} onChange={onChangeSubject}>
-                <option value={'leagal'}>Юр. лицо</option>
                 <option value={'physical'}>Физ. лицо</option>
+                <option value={'leagal'}>Юр. лицо</option>
             </select>
 
         </div>
