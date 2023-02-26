@@ -23,7 +23,7 @@ const Form = () => {
         return () => {
             telegram.offEvent( 'mainButtonClicked', onSendData);
         }
-    }, []);
+    }, [onSendData]);
 
     useEffect(() => {
         telegram.MainButton.setParams({
