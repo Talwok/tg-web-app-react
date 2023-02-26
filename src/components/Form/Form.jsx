@@ -6,13 +6,13 @@ const Form = () => {
     const [country, setCountry] = useState();
     const [street, setStreet] = useState();
     const [subject, setSubject] = useState();
+    
     const {telegram} = useTelegram();
-
+    
     useEffect(()=>{
         telegram.MainButton.setParams({
             text: 'Отправить данные',
-
-        })
+        });
     }, []);
 
     useEffect(()=>{
@@ -26,7 +26,7 @@ const Form = () => {
     const onChangeCountry = (e) => {
         setCountry(e.target.value);
     }
-
+    
     const onChangeStreet = (e) => {
         setStreet(e.target.value);
     }
