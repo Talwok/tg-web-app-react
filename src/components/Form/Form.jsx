@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 import './Form.css';
 
@@ -9,13 +9,13 @@ const Form = () => {
     
     const {telegram} = useTelegram();
     
-    useEffect(()=>{
+    useEffect(() => {
         telegram.MainButton.setParams({
-            text: 'Отправить данные',
+            text: 'Отправить данные'
         });
     }, []);
 
-    useEffect(()=>{
+    useEffect(() => {
         if(!street || !country){
             telegram.MainButton.hide();
         }else{
@@ -26,7 +26,7 @@ const Form = () => {
     const onChangeCountry = (e) => {
         setCountry(e.target.value);
     }
-    
+
     const onChangeStreet = (e) => {
         setStreet(e.target.value);
     }
