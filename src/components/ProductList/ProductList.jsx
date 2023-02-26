@@ -1,15 +1,15 @@
-import React, {useState, reduce} from 'react';
+import React, {useState} from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 import ProductItem from '../ProductItem/ProductItem';
 import './ProductList.css';
 
 const products = [
-    {id: '1', title: 'Джоггеры', price: 2000, description: 'Синего цвета'},
-    {id: '2', title: 'Куртка', price: 5000, description: 'Тёмного цвета, кожанная'},
-    {id: '3', title: 'Очки', price: 500, description: 'Жёлтые линзы, RayBan'},
-    {id: '4', title: 'Бандана', price: 400, description: 'Красного цвета, с узором'},
-    {id: '5', title: 'Кроссовки', price: 3000, description: 'Белого цвета, дышащие'},
-    {id: '6', title: 'Перчатки', price: 1000, description: 'Тёмного цвета, кожаные'}
+    {key: '1', title: 'Джоггеры', price: 2000, description: 'Синего цвета'},
+    {key: '2', title: 'Куртка', price: 5000, description: 'Тёмного цвета, кожанная'},
+    {key: '3', title: 'Очки', price: 500, description: 'Жёлтые линзы, RayBan'},
+    {key: '4', title: 'Бандана', price: 400, description: 'Красного цвета, с узором'},
+    {key: '5', title: 'Кроссовки', price: 3000, description: 'Белого цвета, дышащие'},
+    {key: '6', title: 'Перчатки', price: 1000, description: 'Тёмного цвета, кожаные'}
 ]
 
 const getTotalPrice = (items) => {
@@ -50,7 +50,7 @@ const ProductList = () => {
             {products.map(item => (
                 <ProductItem 
                     product={item}
-                    className={`item`}
+                    className={'item'}
                     onAdd={onAdd}/>
             ))}
         </div>

@@ -7,15 +7,17 @@ const ProductItem = (product, className, onAdd) => {
     const onAddHandler = () => {
         onAdd(product);
     }
+    
+    console.log(product);
 
     return (
         <div className={'product ' + className}>
-            <div className={'img'}></div>
+            <div className={'img'}/>
             <div className={'title'}>
-                {product.title}
+                <span>Заголовок: <b>{product.title}</b></span>
             </div>
             <div className={'description'}>
-                {product.description}
+                <span>Описание: <b>{product.description}</b></span>
             </div>
             <div className={'price'}>
                 <span>Стоимость: <b>{product.price}</b></span>
