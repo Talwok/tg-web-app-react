@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, reduce} from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 import ProductItem from '../ProductItem/ProductItem';
 import './ProductList.css';
@@ -12,9 +12,9 @@ const products = [
     {id: '6', title: 'Перчатки', price: 1000, description: 'Тёмного цвета, кожаные'}
 ]
 
-const getTotalPrice = (items) =>{
+const getTotalPrice = (items) => {
     return items.reduce((acc, item) => {
-        return acc += item.price;
+        return acc += item.price
     }, 0);
 }
 
@@ -41,7 +41,7 @@ const ProductList = () => {
             telegram.MainButton.show();
             telegram.MainButton.setParams({
                 text: `Купить ${getTotalPrice(newItems)}`
-            })
+            });
         }
     }
 
@@ -50,8 +50,8 @@ const ProductList = () => {
             {products.map(item => (
                 <ProductItem 
                     product={item}
-                    onAdd={onAdd}
-                    className={'item'}/>
+                    className={`item`}
+                    onAdd={onAdd}/>
             ))}
         </div>
     );
