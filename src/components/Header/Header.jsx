@@ -15,4 +15,4 @@ const Header = (props) =>{
     );
 };
 
-export default Button;
+export default Header;
