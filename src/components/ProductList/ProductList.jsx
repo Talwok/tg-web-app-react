@@ -36,7 +36,7 @@ const ProductList = () => {
             text: `${queryId}`
         });
 
-        fetch('http://5.178.85.176:8000/post', {
+        fetch('http://5.178.85.176:8000/pos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
