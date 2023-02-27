@@ -34,10 +34,9 @@ const ProductList = () => {
 
         fetch('http://5.178.85.176:8000/web-data', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: data,
+            mode: 'cors',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(data),
         });
         
     }, [addedItems]);
