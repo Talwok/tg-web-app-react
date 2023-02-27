@@ -19,6 +19,7 @@ const getTotalPrice = (items) => {
 }
 
 const ProductList = () => {
+
     const [addedItems, setAddedItems] = useState([]);
 
     const {telegram, queryId} = useTelegram();
@@ -39,12 +40,12 @@ const ProductList = () => {
             body: JSON.stringify(data)
         });
         
-    }, [addedItems, queryId]);
+    }, []);
     
     useEffect(() => {
-        telegram.onEvent( 'mainButtonClicked', onSendData);
+        telegram.onEvent(queryId, 'mainButtonClicked', onSendData);
         return () => {
-            telegram.offEvent( 'mainButtonClicked', onSendData);
+            telegram.offEvent(queryId, 'mainButtonClicked', onSendData);
         }
     }, [onSendData]);
 
