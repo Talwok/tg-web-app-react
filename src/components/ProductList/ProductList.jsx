@@ -29,7 +29,7 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId
         }
-        fetch('https://localhost:8000');
+        fetch('https://5.178.85.176:8000');
         telegram.sendData(JSON.stringify(data), {
             method: 'POST',
             headers: {
