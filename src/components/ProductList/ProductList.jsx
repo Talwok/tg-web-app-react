@@ -29,14 +29,14 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId
         }
-        fetch('https://5.178.85.176:8000/web-data');
-        telegram.sendData(JSON.stringify(data), {
+        fetch('https://5.178.85.176:8000/web-data', {
             method: 'POST',
             headers: {
                 'Content-type' : 'application/json'
             },
             body: JSON.stringify(data)
         });
+        
     }, [addedItems]);
     
     useEffect(() => {
