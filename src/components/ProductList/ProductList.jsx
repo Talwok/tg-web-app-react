@@ -24,11 +24,11 @@ const ProductList = () => {
     const {telegram} = useTelegram();
 
     const onAdd = (product) => {
-        const alreadyAdded = addedItems.find(item => item.id === product.id);
+        const alreadyAdded = addedItems.find(item => item.key === product.key);
         let newItems = [];
 
         if(alreadyAdded){
-            newItems = addedItems.filter(item => item.id !== product.id);
+            newItems = addedItems.filter(item => item.key !== product.key);
         } else {
             newItems = [...addedItems, product];
         }
