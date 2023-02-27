@@ -2,31 +2,33 @@ import React from 'react';
 import Button from '../Button/Button';
 import './ProductItem.css';
 
-const ProductItem = (product, className, onAdd) => {
+const ProductItem = ({product, className, onAdd}) => {
     
     const onAddHandler = () => {
         onAdd(product);
     }
-    
-    console.log(product);
+
+    console.log(product?.title);
+
 
     return (
         <div className={'product ' + className}>
-            <div className={'img'}/>
+            <div className={'img'}></div>
             <div className={'title'}>
-                <span>Заголовок: <b>{product.title}</b></span>
+                <span>Заголовок: <b>{product?.title}</b></span>
             </div>
             <div className={'description'}>
-                <span>Описание: <b>{product.description}</b></span>
+                <span>Описание: <b>{product?.description}</b></span>
             </div>
             <div className={'price'}>
-                <span>Стоимость: <b>{product.price}</b></span>
+                <span>Стоимость: <b>{product?.price}</b></span>
             </div>
             <Button className={'add-btn'} onClick={onAddHandler}>
                 Добавить в корзину
             </Button>
         </div>
     );
+    
 };
 
 export default ProductItem;

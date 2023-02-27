@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, map} from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 import ProductItem from '../ProductItem/ProductItem';
 import './ProductList.css';
@@ -9,8 +9,8 @@ const products = [
     {key: '3', title: 'Очки', price: 500, description: 'Жёлтые линзы, RayBan'},
     {key: '4', title: 'Бандана', price: 400, description: 'Красного цвета, с узором'},
     {key: '5', title: 'Кроссовки', price: 3000, description: 'Белого цвета, дышащие'},
-    {key: '6', title: 'Перчатки', price: 1000, description: 'Тёмного цвета, кожаные'}
-]
+    {key: '6', title: 'Перчатки', price: 1000, description: 'Тёмного цвета, кожаные'},
+];
 
 const getTotalPrice = (items) => {
     return items.reduce((acc, item) => {
@@ -47,12 +47,7 @@ const ProductList = () => {
 
     return (
         <div className={'list'}>
-            {products.map(item => (
-                <ProductItem 
-                    product={item}
-                    className={'item'}
-                    onAdd={onAdd}/>
-            ))}
+            {products.map(item => (<ProductItem product={item} className={'item'} onAdd={onAdd}/>))}
         </div>
     );
 };
