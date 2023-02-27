@@ -37,10 +37,10 @@ const ProductList = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
         });
         
-    }, []);
+    }, [addedItems]);
     
     useEffect(() => {
         telegram.onEvent('mainButtonClicked', onSendData);
@@ -53,7 +53,7 @@ const ProductList = () => {
         const alreadyAdded = addedItems.find(item => item.key === product.key);
         let newItems = [];
 
-        if(alreadyAdded){
+        if (alreadyAdded) {
             newItems = addedItems.filter(item => item.key !== product.key);
         } else {
             newItems = [...addedItems, product];
