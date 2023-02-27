@@ -33,7 +33,7 @@ const ProductList = () => {
         }
         telegram.MainButton.hide();
 
-        fetch('http://5.178.85.176:8000/web-data', {
+        fetch('http://5.178.85.176:8000/web_data', {
             method: 'POST',
             mode: 'cors',
             headers: {'Content-Type':'application/json'},
