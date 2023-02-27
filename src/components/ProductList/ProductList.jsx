@@ -43,9 +43,9 @@ const ProductList = () => {
     }, []);
     
     useEffect(() => {
-        telegram.onEvent(queryId, 'mainButtonClicked', onSendData);
+        telegram.onEvent('mainButtonClicked', onSendData);
         return () => {
-            telegram.offEvent(queryId, 'mainButtonClicked', onSendData);
+            telegram.offEvent('mainButtonClicked', onSendData);
         }
     }, [onSendData]);
 
