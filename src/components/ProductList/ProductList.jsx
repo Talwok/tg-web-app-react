@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 import ProductItem from '../ProductItem/ProductItem';
 import './ProductList.css';
@@ -24,11 +24,13 @@ const ProductList = () => {
     const {telegram, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
+        
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
             queryId
         }
+
         fetch('https://5.178.85.176:8000/web-data', {
             method: 'POST',
             headers: {
