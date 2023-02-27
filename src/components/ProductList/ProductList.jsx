@@ -39,7 +39,7 @@ const ProductList = () => {
             body: JSON.stringify(data)
         });
         
-    }, [addedItems]);
+    }, []);
     
     useEffect(() => {
         telegram.onEvent( 'mainButtonClicked', onSendData);
