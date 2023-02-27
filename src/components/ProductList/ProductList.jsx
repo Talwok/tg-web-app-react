@@ -31,6 +31,7 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId
         }
+        telegram.MainButton.hide();
 
         fetch('http://5.178.85.176:8000/web-data', {
             method: 'POST',
