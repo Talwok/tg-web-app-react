@@ -24,7 +24,7 @@ const ProductList = () => {
 
     const {telegram, queryId} = useTelegram();
 
-    const onSendData = useCallback(async () => {
+    const onSendData = useCallback(() => {
         
         const data = {
             products: addedItems,
@@ -32,7 +32,7 @@ const ProductList = () => {
             queryId
         }
 
-        await fetch('http://5.178.85.176:8000/pos', {
+        fetch('http://5.178.85.176:8000/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
