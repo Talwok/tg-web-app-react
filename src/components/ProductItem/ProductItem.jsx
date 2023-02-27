@@ -12,10 +12,10 @@ const ProductItem = ({product, className, onAdd}) => {
         <div className={'product ' + className}>
             <div className={'img'}></div>
             <div className={'title'}>
-                <span>Заголовок: <b>{product?.title}</b></span>
+                <span><b>{product?.title}</b></span>
             </div>
             <div className={'description'}>
-                <span>Описание: <b>{product?.description}</b></span>
+                <span><b>{product?.description}</b></span>
             </div>
             <div className={'price'}>
                 <span>Стоимость: <b>{product?.price}</b></span>
