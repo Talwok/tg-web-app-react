@@ -31,10 +31,6 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId
         }
-        
-        telegram.MainButton.setParams({
-            text: `${queryId}`
-        });
 
         fetch('http://5.178.85.176:8000/web_data', {
             method: 'POST',
@@ -44,7 +40,7 @@ const ProductList = () => {
             body: JSON.stringify(data)
         });
         
-    }, [addedItems]);
+    }, [addedItems, queryId]);
     
     useEffect(() => {
         telegram.onEvent('mainButtonClicked', onSendData);
