@@ -43,6 +43,10 @@ const ProductList = () => {
     }, [addedItems, queryId]);
     
     useEffect(() => {
+        telegram.BackButton.isVisible = true;
+    }, []);
+
+    useEffect(() => {
         telegram.onEvent('mainButtonClicked', onSendData);
         return () => {
             telegram.offEvent('mainButtonClicked', onSendData);
