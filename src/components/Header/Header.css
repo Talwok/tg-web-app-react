@@ -7,11 +7,9 @@
 }
 
 .closebutton {
-    position: absolute;
     right: 0;
 }
 
 .username {
-    position: absolute;
     left: 0;
 }
