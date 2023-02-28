@@ -6,6 +6,10 @@
     padding: 0 20px;
 }
 
-.username {
+.closebutton {
     margin-left: auto;
+}
+
+.username {
+    margin-right: auto;
 }
