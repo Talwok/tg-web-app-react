@@ -7,9 +7,11 @@
 }
 
 .closebutton {
-    margin-left: auto;
+    position: absolute;
+    right: 0;
 }
 
 .username {
-    margin-right: auto;
+    position: absolute;
+    left: 0;
 }
