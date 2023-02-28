@@ -32,7 +32,7 @@ const ProductList = () => {
             queryId
         }
 
-        fetch('https://8aa8-95-220-158-146.eu.ngrok.io/web-data', {
+        fetch('https://4fbb-95-220-158-146.eu.ngrok.io/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
